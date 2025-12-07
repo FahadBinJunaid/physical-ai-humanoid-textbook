@@ -1,0 +1,84 @@
+/**
+ * Global Custom Styles for Physical AI Textbook
+ */
+
+/* ------------------------------------------
+   LIGHT MODE (default)
+------------------------------------------- */
+html[data-theme='light'] {
+  --ifm-background-color: #ffffff;
+  --ifm-navbar-background-color: #ffffff;
+  --ifm-footer-background-color: #f6f8fa;
+
+  --ifm-color-emphasis-100: #24292f;  /* Dark text */
+  --ifm-color-emphasis-500: #24292f;
+
+  --ifm-card-background: #ffffff;
+  --ifm-border-color: #d0d7de;
+
+  --ifm-color-primary: #0070f3; /* Blue */
+  --ifm-color-secondary: #00c97c; /* Green Accent */
+}
+
+/* ------------------------------------------
+   DARK MODE
+------------------------------------------- */
+html[data-theme='dark'] {
+  --ifm-background-color: #0d1117;
+  --ifm-navbar-background-color: #161b22;
+  --ifm-footer-background-color: #161b22;
+
+  --ifm-color-emphasis-100: #f0f6fc; /* Light text */
+  --ifm-color-emphasis-500: #f0f6fc;
+
+  --ifm-card-background: #161b22;
+  --ifm-border-color: #30363d;
+
+  --ifm-color-primary: #4d9eff;
+  --ifm-color-secondary: #24e384;
+}
+
+/* ------------------------------------------
+   Shared Styles (Light + Dark)
+------------------------------------------- */
+body {
+  font-family: 'Roboto', 'Inter', sans-serif;
+}
+
+.navbar__link {
+  color: var(--ifm-color-emphasis-100);
+}
+
+.navbar__brand img {
+  display: none; /* Hide logo */
+}
+
+/* Cards */
+.card, .card__container, .card__body {
+  background: var(--ifm-card-background) !important;
+  border: 1px solid var(--ifm-border-color) !important;
+  border-radius: 10px;
+}
+
+/* Hero Title Glow */
+.hero__title {
+  text-shadow: 0 0 18px rgba(77,158,255,0.6);
+}
+
+/* Buttons */
+.button--primary {
+  background: var(--ifm-color-primary) !important;
+  color: white !important;
+}
+
+/* Code blocks */
+.theme-code-block {
+  border: 1px solid var(--ifm-border-color);
+  border-radius: 8px;
+}
+
+/* Alerts */
+.alert--info, .alert--warning, .alert--danger {
+  border-left: 5px solid var(--ifm-color-secondary);
+  background-color: var(--ifm-navbar-background-color);
+}
