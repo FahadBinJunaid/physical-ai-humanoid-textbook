@@ -1,0 +1,134 @@
+.moduleCard {
+  height: 100%;
+  transition: all 0.3s ease;
+  border: 2px solid;
+  border-radius: 8px;
+  text-decoration: none !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.moduleCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.moduleCard:active {
+  transform: translateY(-3px);
+}
+
+.cardHeader {
+  padding: 1rem;
+}
+
+.cardIcon {
+  font-size: 1.5rem;
+  margin-right: 0.5rem;
+}
+
+.cardTitle {
+  display: inline;
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.cardDescription {
+  padding: 0 1rem;
+  flex-grow: 1;
+}
+
+.cardFooter {
+  padding: 1rem;
+  margin-top: auto;
+}
+
+.learnMoreText {
+  font-weight: bold;
+  color: inherit;
+}
+
+/* Blue theme */
+.module-card-blue-light {
+  border-color: #3b82f6; /* Tailwind blue-500 */
+  background-color: #eff6ff; /* Tailwind blue-50 */
+  color: #1e40af; /* Tailwind blue-800 */
+}
+
+.module-card-blue-light:hover {
+  background-color: #dbeafe; /* Tailwind blue-100 */
+}
+
+.module-card-blue-dark {
+  border-color: #60a5fa; /* Tailwind blue-400 */
+  background-color: #1e3a8a; /* Tailwind blue-900 */
+  color: #bfdbfe; /* Tailwind blue-200 */
+}
+
+.module-card-blue-dark:hover {
+  background-color: #1e40af; /* Tailwind blue-800 */
+}
+
+/* Slate theme */
+.module-card-slate-light {
+  border-color: #64748b; /* Tailwind slate-500 */
+  background-color: #f1f5f9; /* Tailwind slate-100 */
+  color: #334155; /* Tailwind slate-700 */
+}
+
+.module-card-slate-light:hover {
+  background-color: #e2e8f0; /* Tailwind slate-200 */
+}
+
+.module-card-slate-dark {
+  border-color: #94a3b8; /* Tailwind slate-400 */
+  background-color: #0f172a; /* Tailwind slate-900 */
+  color: #cbd5e1; /* Tailwind slate-200 */
+}
+
+.module-card-slate-dark:hover {
+  background-color: #1e293b; /* Tailwind slate-800 */
+}
+
+/* Teal theme */
+.module-card-teal-light {
+  border-color: #14b8a6; /* Tailwind teal-500 */
+  background-color: #f0fdfa; /* Tailwind teal-50 */
+  color: #0f766e; /* Tailwind teal-800 */
+}
+
+.module-card-teal-light:hover {
+  background-color: #ccfbf1; /* Tailwind teal-100 */
+}
+
+.module-card-teal-dark {
+  border-color: #5eead4; /* Tailwind teal-400 */
+  background-color: #115e59; /* Tailwind teal-900 */
+  color: #94f7e9; /* Tailwind teal-200 */
+}
+
+.module-card-teal-dark:hover {
+  background-color: #137770; /* Tailwind teal-800 */
+}
+
+/* Indigo theme */
+.module-card-indigo-light {
+  border-color: #6366f1; /* Tailwind indigo-500 */
+  background-color: #eef2ff; /* Tailwind indigo-50 */
+  color: #4f46e5; /* Tailwind indigo-700 */
+}
+
+.module-card-indigo-light:hover {
+  background-color: #e0e7ff; /* Tailwind indigo-100 */
+}
+
+.module-card-indigo-dark {
+  border-color: #818cf8; /* Tailwind indigo-400 */
+  background-color: #312e81; /* Tailwind indigo-900 */
+  color: #c7d2fe; /* Tailwind indigo-200 */
+}
+
+.module-card-indigo-dark:hover {
+  background-color: #4f46e5; /* Tailwind indigo-700 */
+}

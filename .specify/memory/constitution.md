@@ -1,55 +1,68 @@
-# [PROJECT_NAME] Constitution
-<!-- Example: Spec Constitution, TaskFlow Constitution, etc. -->
+<!--
+Sync Impact Report:
+Version change: 1.0.0 → 1.0.0 (initial constitution)
+Modified principles: None (new project)
+Added sections: All sections (initial constitution)
+Removed sections: None
+Templates requiring updates: N/A (initial constitution)
+Follow-up TODOs: [RATIFICATION_DATE]: Need to set initial ratification date
+-->
+
+# Physical AI & Humanoid Robotics Textbook with Integrated RAG Chatbot Constitution
 
 ## Core Principles
 
-### [PRINCIPLE_1_NAME]
-<!-- Example: I. Library-First -->
-[PRINCIPLE_1_DESCRIPTION]
-<!-- Example: Every feature starts as a standalone library; Libraries must be self-contained, independently testable, documented; Clear purpose required - no organizational-only libraries -->
+### Technical Precision
+All content regarding ROS 2, NVIDIA Isaac, and VLA models must be technically accurate and reflect 2024-2025 industry standards. This ensures the educational material remains current and practically applicable for students and professionals in the field of humanoid robotics.
 
-### [PRINCIPLE_2_NAME]
-<!-- Example: II. CLI Interface -->
-[PRINCIPLE_2_DESCRIPTION]
-<!-- Example: Every library exposes functionality via CLI; Text in/out protocol: stdin/args → stdout, errors → stderr; Support JSON + human-readable formats -->
+### Spec-Driven Consistency
+Every implementation phase must strictly follow the current sp.specify, sp.plan, and sp.tasks artifacts. This ensures zero drift between planned functionality and implemented features, maintaining alignment between educational content and technical implementation.
 
-### [PRINCIPLE_3_NAME]
-<!-- Example: III. Test-First (NON-NEGOTIABLE) -->
-[PRINCIPLE_3_DESCRIPTION]
-<!-- Example: TDD mandatory: Tests written → User approved → Tests fail → Then implement; Red-Green-Refactor cycle strictly enforced -->
+### AI-Native Education
+The textbook should not just explain AI concepts; it should demonstrate them through clean, executable code examples. This principle emphasizes hands-on learning through practical implementation and experimentation.
 
-### [PRINCIPLE_4_NAME]
-<!-- Example: IV. Integration Testing -->
-[PRINCIPLE_4_DESCRIPTION]
-<!-- Example: Focus areas requiring integration tests: New library contract tests, Contract changes, Inter-service communication, Shared schemas -->
+### Source of Truth
+The Docusaurus Markdown files serve as the primary source of truth for both the website and the RAG vector database. This ensures content consistency across both the educational material and the AI chatbot's knowledge base.
 
-### [PRINCIPLE_5_NAME]
-<!-- Example: V. Observability, VI. Versioning & Breaking Changes, VII. Simplicity -->
-[PRINCIPLE_5_DESCRIPTION]
-<!-- Example: Text I/O ensures debuggability; Structured logging required; Or: MAJOR.MINOR.BUILD format; Or: Start simple, YAGNI principles -->
+### RAG Contextual Grounding
+The integrated chatbot must prioritize "Contextual Grounding," meaning it only answers questions based on the textbook content unless explicitly instructed otherwise. This maintains educational integrity and prevents hallucination of information.
 
-### [PRINCIPLE_6_NAME]
+### Separation of Concerns
+Maintain a strict separation between /docs (book content) and /src (RAG logic/FastAPI). This architectural principle ensures clean organization and independent maintenance of content versus implementation logic.
 
+## Technical Standards and Constraints
 
-[PRINCIPLE__DESCRIPTION]
+### Documentation Standards
+Use Docusaurus v3 features with content written in MDX format. All diagrams must utilize Mermaid.js syntax for robotics architecture and RAG flow diagrams, ensuring consistent visualization of complex concepts.
 
-## [SECTION_2_NAME]
-<!-- Example: Additional Constraints, Security Requirements, Performance Standards, etc. -->
+### Code Quality Requirements
+Python code must follow PEP 8 standards; FastAPI code must use Pydantic models for request/response validation. This ensures maintainable, standardized code across the project.
 
-[SECTION_2_CONTENT]
-<!-- Example: Technology stack requirements, compliance standards, deployment policies, etc. -->
+### Technology Stack Requirements
+- Frontend: Docusaurus v3 for documentation and educational content
+- Backend: FastAPI for RAG services
+- Vector Storage: Qdrant Cloud for efficient similarity search
+- Metadata Storage: Neon Postgres for chat history and metadata
+- Robotics Stack References: Focus on ROS 2 (Jazzy/Humble), Gazebo Harmonic, and NVIDIA Isaac Sim/ROS
 
-## [SECTION_3_NAME]
-<!-- Example: Development Workflow, Review Process, Quality Gates, etc. -->
+### Security and Deployment
+No API keys or database connection strings in the codebase; use .env files and proper secret management. The frontend must be deployable to GitHub Pages, while the backend should work on cloud platforms like Vercel or Railway.
 
-[SECTION_3_CONTENT]
-<!-- Example: Code review requirements, testing gates, deployment approval process, etc. -->
+## Development Workflow
+
+### Implementation Discipline
+Follow Spec-Driven Development practices with strict adherence to the spec-plan-tasks workflow. All changes must be small, testable, and precisely referenced to existing code. Prioritize the smallest viable diff and avoid unrelated refactoring.
+
+### Quality Assurance
+Implement comprehensive testing covering both the educational content accuracy and the RAG system functionality. Include unit tests for code examples, integration tests for the chatbot retrieval mechanisms, and validation of content grounding.
+
+### File Structure Governance
+Maintain organized project structure with clear separation between educational modules (organized by topic) and technical implementation (organized by function). Ensure consistent naming conventions and folder organization.
 
 ## Governance
-<!-- Example: Constitution supersedes all other practices; Amendments require documentation, approval, migration plan -->
 
-[GOVERNANCE_RULES]
-<!-- Example: All PRs/reviews must verify compliance; Complexity must be justified; Use [GUIDANCE_FILE] for runtime development guidance -->
+This constitution establishes the foundational principles that supersede all other development practices for this project. All team members must verify compliance with these principles during code reviews and implementation phases. Any deviation from these principles must be documented and approved through formal amendment procedures.
 
-**Version**: [CONSTITUTION_VERSION] | **Ratified**: [RATIFICATION_DATE] | **Last Amended**: [LAST_AMENDED_DATE]
-<!-- Example: Version: 2.1.1 | Ratified: 2025-06-13 | Last Amended: 2025-07-16 -->
+Amendments to this constitution require explicit documentation of the change, approval from project stakeholders, and a migration plan for existing implementations. All changes must maintain the educational integrity and technical excellence standards outlined herein.
+
+**Version**: 1.0.0 | **Ratified**: TODO(RATIFICATION_DATE) | **Last Amended**: 2025-12-17

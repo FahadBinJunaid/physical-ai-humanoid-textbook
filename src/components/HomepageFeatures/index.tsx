@@ -1,68 +1,75 @@
-import type {ReactNode} from 'react';
+import React from 'react';
 import clsx from 'clsx';
-import Heading from '@theme/Heading';
 import styles from './styles.module.css';
+import ModuleCard from '../ModuleCard';
 
-type FeatureItem = {
+type ModuleItem = {
   title: string;
-  Svg: React.ComponentType<React.ComponentProps<'svg'>>;
-  description: ReactNode;
+  description: string;
+  link: string;
+  icon: string;
+  color: string;
 };
 
-const FeatureList: FeatureItem[] = [
+const ModuleList: ModuleItem[] = [
   {
-    title: 'Easy to Use',
-    Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
-    description: (
-      <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
-      </>
-    ),
+    title: 'Introduction',
+    description: 'Getting started with Physical AI & Humanoid Robotics',
+    link: '/docs/01-introduction/intro',
+    icon: '👋',
+    color: 'blue',
   },
   {
-    title: 'Focus on What Matters',
-    Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
-    description: (
-      <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
-      </>
-    ),
+    title: 'Module 1 - ROS2',
+    description: 'Learn the fundamentals of Robot Operating System 2',
+    link: '/docs/02-module-1-ros2/ros2-basics',
+    icon: '🤖',
+    color: 'teal',
   },
   {
-    title: 'Powered by React',
-    Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
-    description: (
-      <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
-      </>
-    ),
+    title: 'Module 2 - Digital Twin',
+    description: 'Explore creating and managing digital replicas of physical robotic systems',
+    link: '/docs/03-module-2-digital-twin/simulation',
+    icon: '🔄',
+    color: 'slate',
+  },
+  {
+    title: 'Module 3 - NVIDIA Isaac',
+    description: 'Master NVIDIA Isaac for developing AI-powered robotic applications',
+    link: '/docs/04-module-3-nvidia-isaac/perception',
+    icon: '⚡',
+    color: 'indigo',
+  },
+  {
+    title: 'Module 4 - VLA Intelligence',
+    description: 'Discover Vision-Language-Action models for intelligent robotic systems',
+    link: '/docs/05-module-4-vla/vla-intelligence',
+    icon: '🧠',
+    color: 'blue',
   },
 ];
 
-function Feature({title, Svg, description}: FeatureItem) {
+function ModuleFeature({title, description, link, icon, color}: ModuleItem) {
   return (
-    <div className={clsx('col col--4')}>
-      <div className="text--center">
-        <Svg className={styles.featureSvg} role="img" />
-      </div>
-      <div className="text--center padding-horiz--md">
-        <Heading as="h3">{title}</Heading>
-        <p>{description}</p>
-      </div>
+    <div className={clsx('col col--3')}>
+      <ModuleCard
+        title={title}
+        description={description}
+        link={link}
+        icon={icon}
+        color={color}
+      />
     </div>
   );
 }
 
-export default function HomepageFeatures(): ReactNode {
+export default function HomepageFeatures(): JSX.Element {
   return (
     <section className={styles.features}>
       <div className="container">
-        <div className="row">
-          {FeatureList.map((props, idx) => (
-            <Feature key={idx} {...props} />
+        <div className="row" style={{gap: '1rem', justifyContent: 'center'}}>
+          {ModuleList.map((props, idx) => (
+            <ModuleFeature key={idx} {...props} />
           ))}
         </div>
       </div>

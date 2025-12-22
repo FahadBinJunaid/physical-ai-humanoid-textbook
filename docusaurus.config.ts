@@ -2,20 +2,34 @@ import {themes as prismThemes} from 'prism-react-renderer';
 import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
+// This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
+
 const config: Config = {
-  // --- Branding Fixes ---
-  title: 'Physical AI Textbook', 
-  tagline: 'Bridging the gap between Digital Intelligence and the Physical World', 
+  title: 'Physical AI & Humanoid Robotics',
+  tagline: 'Mastering the Future of Embodied Intelligence',
   favicon: 'img/favicon.ico',
 
-  // --- Project Configuration ---
-  url: 'https://FahadBinJunaid.github.io', 
-  baseUrl: '/', 
-  
-  organizationName: 'FahadBinJunaid', 
-  projectName: 'Physical AI Textbook', 
+  // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
+  future: {
+    v4: true, // Improve compatibility with the upcoming Docusaurus v4
+  },
+
+  // Set the production url of your site here
+  url: 'https://your-docusaurus-site.example.com',
+  // Set the /<baseUrl>/ pathname under which your site is served
+  // For GitHub pages deployment, it is often '/<projectName>/'
+  baseUrl: '/',
+
+  // GitHub pages deployment config.
+  // If you aren't using GitHub pages, you don't need these.
+  organizationName: 'facebook', // Usually your GitHub org/user name.
+  projectName: 'docusaurus', // Usually your repo name.
+
   onBrokenLinks: 'throw',
 
+  // Even if you don't use internationalization, you can use this field to set
+  // useful metadata like html lang. For example, if your site is Chinese, you
+  // may want to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: 'en',
     locales: ['en'],
@@ -26,10 +40,12 @@ const config: Config = {
       'classic',
       {
         docs: {
-          sidebarPath: './sidebars.ts', 
-          routeBasePath: '/', // Makes the docs the homepage
+          sidebarPath: './sidebars.ts',
+          // Please change this to your repo.
+          // Remove this to remove the "edit this page" links.
+          editUrl:
+            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
         },
-        // Blog is REMOVED
         theme: {
           customCss: './src/css/custom.css',
         },
@@ -38,26 +54,26 @@ const config: Config = {
   ],
 
   themeConfig: {
+    // Replace with your project's social card
     image: 'img/docusaurus-social-card.jpg',
     colorMode: {
-      defaultMode: 'dark', 
       respectPrefersColorScheme: true,
     },
     navbar: {
-      title: 'Physical AI Textbook', 
+      title: 'Physical AI & Humanoid Robotics',
       logo: {
-        alt: 'Physical AI Logo',
-        src: 'img/logo.svg', 
+        alt: 'My Site Logo',
+        src: 'img/logo.svg',
       },
       items: [
         {
           type: 'docSidebar',
           sidebarId: 'tutorialSidebar',
           position: 'left',
-          label: 'Textbook Modules',
+          label: 'Tutorial',
         },
         {
-          href: 'https://github.com/FahadBinJunaid', // Fixed GitHub link
+          href: 'https://github.com/facebook/docusaurus',
           label: 'GitHub',
           position: 'right',
         },
@@ -67,25 +83,50 @@ const config: Config = {
       style: 'dark',
       links: [
         {
-          title: 'Course Modules',
+          title: 'Docs',
           items: [
-            // Links MUST match the correct Docusaurus IDs from sidebars.ts
-            { label: 'Start Learning (Intro)', to: '/intro/welcome' },
-            { label: 'Module 1: ROS 2', to: '/module-1-ros2/nodes-intro' },
-            { label: 'Module 2: Simulation', to: '/module-2-simulation/gazebo-physics' },
-            { label: 'Module 3: NVIDIA Isaac', to: '/module-3-isaac/isaac-sim-intro' },
-            { label: 'Module 4: VLA', to: '/module-4-vla/whisper-voice' },
+            {
+              label: 'Tutorial',
+              to: '/docs/01-introduction/intro',
+            },
           ],
         },
         {
-          title: 'Project Links',
+          title: 'Modules',
           items: [
-            // Fixed GitHub link
-            { label: 'GitHub Profile', href: 'https://github.com/FahadBinJunaid' }, 
+            {
+              label: 'Introduction',
+              to: '/docs/01-introduction/intro',
+            },
+            {
+              label: 'Module 1 - ROS2',
+              to: '/docs/02-module-1-ros2/ros2-basics',
+            },
+            {
+              label: 'Module 2 - Digital Twin',
+              to: '/docs/03-module-2-digital-twin/simulation',
+            },
+            {
+              label: 'Module 3 - NVIDIA Isaac',
+              to: '/docs/04-module-3-nvidia-isaac/perception',
+            },
+            {
+              label: 'Module 4 - VLA',
+              to: '/docs/05-module-4-vla/vla-intelligence',
+            },
+          ],
+        },
+        {
+          title: 'More',
+          items: [
+            {
+              label: 'GitHub',
+              href: 'https://github.com/facebook/docusaurus',
+            },
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} Fahad Bin Junaid. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
     },
     prism: {
       theme: prismThemes.github,

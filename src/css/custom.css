@@ -1,84 +1,193 @@
 /**
- * Global Custom Styles for Physical AI Textbook
+ * Any CSS included here will be global. The classic template
+ * bundles Infima by default. Infima is a CSS framework designed to
+ * work well for content-centric websites.
  */
 
-/* ------------------------------------------
-   LIGHT MODE (default)
-------------------------------------------- */
-html[data-theme='light'] {
-  --ifm-background-color: #ffffff;
-  --ifm-navbar-background-color: #ffffff;
-  --ifm-footer-background-color: #f6f8fa;
+/* Blue/Slate robotic theme with high contrast for accessibility */
+:root {
+  --ifm-color-primary: #2563eb; /* Blue-600 */
+  --ifm-color-primary-dark: #1d4ed8; /* Blue-700 */
+  --ifm-color-primary-darker: #1e40af; /* Blue-800 */
+  --ifm-color-primary-darkest: #1e3a8a; /* Blue-900 */
+  --ifm-color-primary-light: #3b82f6; /* Blue-500 */
+  --ifm-color-primary-lighter: #60a5fa; /* Blue-400 */
+  --ifm-color-primary-lightest: #93c5fd; /* Blue-300 */
 
-  --ifm-color-emphasis-100: #24292f;  /* Dark text */
-  --ifm-color-emphasis-500: #24292f;
+  /* Additional slate colors for robotic theme */
+  --ifm-color-secondary: #64748b; /* Slate-500 */
+  --ifm-color-secondary-dark: #475569; /* Slate-600 */
+  --ifm-color-secondary-darker: #334155; /* Slate-700 */
+  --ifm-color-secondary-darkest: #1e293b; /* Slate-800 */
+  --ifm-color-secondary-light: #94a3b8; /* Slate-400 */
+  --ifm-color-secondary-lighter: #cbd5e1; /* Slate-300 */
+  --ifm-color-secondary-lightest: #e2e8f0; /* Slate-200 */
 
-  --ifm-card-background: #ffffff;
-  --ifm-border-color: #d0d7de;
+  --ifm-color-text: #0f172a; /* Slate-900 - high contrast text */
+  --ifm-color-text-secondary: #334155; /* Slate-700 - secondary text */
+  --ifm-color-background: #ffffff;
+  --ifm-color-gray-100: #f1f5f9; /* Slate-100 */
+  --ifm-color-gray-200: #e2e8f0; /* Slate-200 */
+  --ifm-color-gray-300: #cbd5e1; /* Slate-300 */
+  --ifm-color-gray-400: #94a3b8; /* Slate-400 */
+  --ifm-color-gray-500: #64748b; /* Slate-500 */
+  --ifm-color-gray-600: #475569; /* Slate-600 */
+  --ifm-color-gray-700: #334155; /* Slate-700 */
+  --ifm-color-gray-800: #1e293b; /* Slate-800 */
+  --ifm-color-gray-900: #0f172a; /* Slate-900 */
 
-  --ifm-color-primary: #0070f3; /* Blue */
-  --ifm-color-secondary: #00c97c; /* Green Accent */
+  --ifm-code-font-size: 95%;
+  --docusaurus-highlighted-code-line-bg: rgba(37, 99, 235, 0.1); /* Blue-600 with low opacity */
 }
 
-/* ------------------------------------------
-   DARK MODE
-------------------------------------------- */
-html[data-theme='dark'] {
-  --ifm-background-color: #0d1117;
-  --ifm-navbar-background-color: #161b22;
-  --ifm-footer-background-color: #161b22;
+/* Dark mode with high contrast and blue/slate theme */
+[data-theme='dark'] {
+  --ifm-color-primary: #3b82f6; /* Blue-500 */
+  --ifm-color-primary-dark: #2563eb; /* Blue-600 */
+  --ifm-color-primary-darker: #1d4ed8; /* Blue-700 */
+  --ifm-color-primary-darkest: #1e40af; /* Blue-800 */
+  --ifm-color-primary-light: #60a5fa; /* Blue-400 */
+  --ifm-color-primary-lighter: #93c5fd; /* Blue-300 */
+  --ifm-color-primary-lightest: #bfdbfe; /* Blue-200 */
 
-  --ifm-color-emphasis-100: #f0f6fc; /* Light text */
-  --ifm-color-emphasis-500: #f0f6fc;
+  --ifm-color-secondary: #94a3b8; /* Slate-400 */
+  --ifm-color-secondary-dark: #cbd5e1; /* Slate-300 */
+  --ifm-color-secondary-darker: #e2e8f0; /* Slate-200 */
+  --ifm-color-secondary-darkest: #f1f5f9; /* Slate-100 */
+  --ifm-color-secondary-light: #64748b; /* Slate-500 */
+  --ifm-color-secondary-lighter: #475569; /* Slate-600 */
+  --ifm-color-secondary-lightest: #334155; /* Slate-700 */
 
-  --ifm-card-background: #161b22;
-  --ifm-border-color: #30363d;
+  --ifm-color-text: #e2e8f0; /* Slate-200 - high contrast text in dark mode */
+  --ifm-color-text-secondary: #cbd5e1; /* Slate-300 - secondary text in dark mode */
+  --ifm-color-background: #0f172a; /* Slate-900 */
 
-  --ifm-color-primary: #4d9eff;
-  --ifm-color-secondary: #24e384;
+  --docusaurus-highlighted-code-line-bg: rgba(59, 130, 246, 0.2); /* Blue-500 with low opacity */
 }
 
-/* ------------------------------------------
-   Shared Styles (Light + Dark)
-------------------------------------------- */
-body {
-  font-family: 'Roboto', 'Inter', sans-serif;
+/* High contrast text styles */
+.hero__title {
+  color: var(--ifm-color-text);
+}
+
+.hero__subtitle {
+  color: var(--ifm-color-text-secondary);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--ifm-color-text);
+}
+
+p, span, div, li {
+  color: var(--ifm-color-text);
+}
+
+/* Module card responsive design */
+.moduleCard {
+  min-height: 220px;
+  transition: all 0.3s ease;
+  border: 2px solid;
+  border-radius: 8px;
+  text-decoration: none !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.moduleCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.moduleCard:active {
+  transform: translateY(-3px);
+}
+
+/* Responsive adjustments */
+@media (max-width: 996px) {
+  .col--3 {
+    flex: 0 0 50% !important;
+    max-width: 50% !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .col--3 {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+  }
+}
+
+/* Focus styles for accessibility */
+a:focus,
+button:focus,
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 2px solid var(--ifm-color-primary);
+  outline-offset: 2px;
+}
+
+/* Better focus styles for module cards */
+.moduleCard:focus {
+  outline: 2px solid var(--ifm-color-primary);
+  outline-offset: 2px;
+}
+
+/* Improve contrast for code blocks */
+.code-block {
+  background-color: var(--ifm-color-gray-100);
+  color: var(--ifm-color-text);
+}
+
+/* Footer improvements */
+.footer {
+  background-color: var(--ifm-color-gray-800);
+  color: var(--ifm-color-text);
+}
+
+.footer a {
+  color: var(--ifm-color-text-secondary);
+}
+
+.footer a:hover {
+  color: var(--ifm-color-primary-lighter);
+}
+
+/* Ensure sufficient contrast ratios for all text */
+.navbar__title {
+  color: var(--ifm-color-text);
 }
 
 .navbar__link {
-  color: var(--ifm-color-emphasis-100);
+  color: var(--ifm-color-text-secondary);
 }
 
-.navbar__brand img {
-  display: none; /* Hide logo */
+/* Improve button contrast */
+.button--secondary {
+  background-color: var(--ifm-color-primary);
+  color: white;
+  border: none;
 }
 
-/* Cards */
-.card, .card__container, .card__body {
-  background: var(--ifm-card-background) !important;
-  border: 1px solid var(--ifm-border-color) !important;
-  border-radius: 10px;
+.button--secondary:hover {
+  background-color: var(--ifm-color-primary-dark);
 }
 
-/* Hero Title Glow */
-.hero__title {
-  text-shadow: 0 0 18px rgba(77,158,255,0.6);
+/* Ensure interactive elements have proper focus states */
+.card {
+  border: 1px solid var(--ifm-color-gray-300);
 }
 
-/* Buttons */
-.button--primary {
-  background: var(--ifm-color-primary) !important;
-  color: white !important;
+.card:hover {
+  border-color: var(--ifm-color-primary);
 }
 
-/* Code blocks */
-.theme-code-block {
-  border: 1px solid var(--ifm-border-color);
-  border-radius: 8px;
+/* Improve link contrast */
+a {
+  color: var(--ifm-color-primary-light);
 }
 
-/* Alerts */
-.alert--info, .alert--warning, .alert--danger {
-  border-left: 5px solid var(--ifm-color-secondary);
-  background-color: var(--ifm-navbar-background-color);
+a:hover {
+  color: var(--ifm-color-primary-lighter);
 }
